@@ -9,6 +9,7 @@ import {screenSizeFormat} from "./helpers/bestseller.js";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
 import {meestVerkocht, goedkoopEerst, geschiktSport} from "./helpers/button-script.js";
+import  log from "./helpers/array-methods.js";
 
 
 function App() {
@@ -57,8 +58,14 @@ function App() {
                     <button type={"button"} onClick={meestVerkocht}>Meest verkocht eerst</button>
                     <button type={"button"} onClick={goedkoopEerst}>Goedkoopste eerst</button>
                     <button type={"button"} onClick={geschiktSport}>Meest geschikt voor sport eerst</button>
+                    <button type={"button"} onClick={log}>Log de uitkomsten van 2.1-2.6</button>
                 </section>
             </div>
+            <section>
+                <ul>
+                    test
+                </ul>
+            </section>
         </>
 
     )
