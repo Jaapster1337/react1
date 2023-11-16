@@ -2,14 +2,15 @@ import './App.css';
 import tvSold from "./helpers/total-tvs-sold.js";
 import productsBought from "./helpers/total-bought.js";
 import totalTvsSold from "./helpers/total-tvs-sold.js";
-import {bestSellingTv} from "./constants/inventory.js";
+import {bestSellingTv, inventory} from "./constants/inventory.js";
 import {bestsellerImage, tvName} from "./helpers/bestseller.js";
 import {priceFormat} from "./helpers/bestseller.js";
 import {screenSizeFormat} from "./helpers/bestseller.js";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
 import {meestVerkocht, goedkoopEerst, geschiktSport} from "./helpers/button-script.js";
-import  log from "./helpers/array-methods.js";
+import  {log} from "./helpers/array-methods.jsx";
+import {showBrands, showTvs} from "./helpers/showAllTvs.jsx";
 
 
 function App() {
@@ -62,9 +63,7 @@ function App() {
                 </section>
             </div>
             <section>
-                <ul>
-                    test
-                </ul>
+                {showTvs()}
             </section>
         </>
 

@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    list-style-type: none;
+    margin: 0;
 }
 .upper-box-container{
     display: flex;
@@ -10,13 +12,13 @@
 
 .lower-box-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .box{
     text-align: center;
     width: fit-content;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
 }
 
@@ -39,8 +41,16 @@
 }
 
 .best-selling{
-    border: 2px dotted grey;
-    width: 90%
+    border: grey dotted 2px;
+    width: 90%;
+}
+
+.tvImg{
+    width: 30%;
+}
+
+.tvList{
+    padding-left: 10px;
 }
 
 .container-container{

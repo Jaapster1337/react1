@@ -1,46 +1,35 @@
 import {inventory} from "../constants/inventory.js";
+import React from "react";
 
 const tvTypes = inventory.map((tv) => {
     return tv.type
 })
 
-const soldOut = inventory.filter((tv)=>{
-    if(tv.originalStock === tv.sold) {
+const soldOut = inventory.filter((tv) => {
+    if (tv.originalStock === tv.sold) {
         return tv
     }
 })
 
-const specificTv = inventory.find((tv)=>{
+const specificTv = inventory.find((tv) => {
     return tv.type === "NH3216SMART"
 })
 
-const sportsTv = inventory.filter((tv)=>{
-    if(tv.refreshRate >= 100){
+const sportsTv = inventory.filter((tv) => {
+    if (tv.refreshRate >= 100) {
         return tv
     }
 })
 
-const bigTvs = inventory.filter((tv)=>{
-    if(tv.availableSizes.includes(65)){
+const bigTvs = inventory.filter((tv) => {
+    if (tv.availableSizes.includes(65)) {
         return tv
     }
 })
 
-const ambilight= inventory.filter((tv) =>{
-    if(tv.options[ambilight]===true){
-        return tv
-    }
+const ambilight = inventory.filter((tv) => {
+    return tv["options"][4]["applicable"]
 })
-
-// function listOfBrands(array){
-//     const brands = inventory.map((tv)=>{
-//         return tv.brand
-//     })
-//     let list = ""
-//     for (const brand in brands) {
-//         list +=
-//     }
-// }
 
 function log() {
 //     console.log("TvTypes")
@@ -63,12 +52,16 @@ function log() {
 //     console.log(bigTvs)
 //     console.log("")
 //
-    console.log("Tv's with ambilight")
-    console.log(ambilight)
-    console.log("")
+//     console.log("Tv's with ambilight")
+//     console.log(ambilight)
+//     console.log("")
 //
 //     // console.log(inventory[0].options)
+
+    console.log(showBrands())
 }
+
 //
-export default log;
+export {log};
+
 
