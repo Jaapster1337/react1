@@ -39,7 +39,7 @@ export const bestSellingTv = {
 // STATISCHE VOORRAAD TV'S
 export let inventory = [
     {
-        id: 0,
+        id:0,
         type: '43PUS6504/12',
         name: '4K TV',
         brand: 'Philips',

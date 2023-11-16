@@ -20,10 +20,40 @@ function showBrands() {
     )
 }
 
-function getTvId(id){
-    return inventory.find((tv)=>{
-        return tv.id
-    })
+function returnImage(id){
+    return inventory[id].sourceImg
+}
+
+function returnTvName(id){
+    return inventory[id].name
+}
+
+function returnTvPrice(id){
+    return "€"+inventory[id].price+",-"
+}
+
+function returnAvailableSizes(id){
+    let sizeString=""
+    for (const size in inventory[id].availableSizes) {
+        sizeString += inventory[id].availableSizes[size]
+        sizeString += " inch"
+        sizeString += " (" + (inventory[id].availableSizes[size]*2.54) + " cm) "
+        sizeString += " | "
+    }
+    return sizeString.split("| ")
+}
+
+function displayOptions(id){
+    console.log(inventory[id].options.length)
+    for (let i = 0; i < inventory[id].options.length; i++) {
+
+        return(
+            <>
+                <span>{inventory[id].options[i].name}</span>
+            </>
+        )
+    }
+
 }
 
 
@@ -33,31 +63,19 @@ function showTvs(){
         <>
             <ul>
                 {inventory.map((tv)=>{
-                    console.log()
                     return(
                         <li key={tv.id}>
                             <div  className={"lower-box-container"} >
-                                {console.log()}
-                                <img src={getTvId(tv.id).sourceImg} className={"tvImg"} alt="bestselling tv"/>
+                                <img src={returnImage(tv.id)} className={"tvImg"} alt="bestselling tv"/>
                                 <section className={"tvList"}>
-                                    <h3>{getTvId(tv.id).name}</h3>
-                                    <h2>{priceFormat(bestSellingTv)}</h2>
-                                    <h3>{screenSizeFormat()}</h3>
-                                    <div>
-                                        <img src={check} alt="" className={"ball"}/>
-                                        <span> Wifi </span>
-                                        <img src={minus} alt="" className={"ball"}/>
-                                        <span> Speech </span>
-                                        <img src={check} alt="" className={"ball"}/>
-                                        <span> Hdr </span>
-                                        <img src={check} alt="" className={"ball"}/>
-                                        <span> Bluetooth </span>
-                                        <img src={minus} alt="" className={"ball"}/>
-                                        <span> Ambilight </span>
+                                    <h3>{returnTvName(tv.id)}</h3>
+                                    <h2>{returnTvPrice(tv.id)}</h2>
+                                    <h3>{returnAvailableSizes(tv.id)}</h3>
+                                    <div className={"tvOptions"}>
+                                        {displayOptions(tv.id)}
                                     </div>
                                 </section>
                             </div>
-
                         </li>
                     )
                 })}
