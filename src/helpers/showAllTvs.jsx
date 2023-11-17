@@ -20,52 +20,48 @@ function showBrands() {
     )
 }
 
-function returnImage(id){
+function returnImage(id) {
     return inventory[id].sourceImg
 }
 
-function returnTvName(id){
+function returnTvName(id) {
     return inventory[id].name
 }
 
-function returnTvPrice(id){
-    return "€"+inventory[id].price+",-"
+function returnTvPrice(id) {
+    return "€" + inventory[id].price + ",-"
 }
 
-function returnAvailableSizes(id){
-    let sizeString=""
+function returnAvailableSizes(id) {
+    let sizeString = ""
     for (const size in inventory[id].availableSizes) {
         sizeString += inventory[id].availableSizes[size]
         sizeString += " inch"
-        sizeString += " (" + (inventory[id].availableSizes[size]*2.54) + " cm) "
+        sizeString += " (" + (inventory[id].availableSizes[size] * 2.54) + " cm) "
         sizeString += " | "
     }
     return sizeString.split("| ")
 }
 
-function displayOptions(id){
-    console.log(inventory[id].options.length)
-    for (let i = 0; i < inventory[id].options.length; i++) {
-
-        return(
+function displayOptions(id) {
+    if (inventory[id].options.applicable === false)
+        return inventory[id].options.map((option, index) => (
             <>
-                <span>{inventory[id].options[i].name}</span>
+                <img src={minus} alt={"check"}/>
+                <span key={index}>{option.name} </span>
             </>
-        )
-    }
-
+        ))
 }
 
 
-
-function showTvs(){
-    return(
+function showTvs() {
+    return (
         <>
             <ul>
-                {inventory.map((tv)=>{
-                    return(
+                {inventory.map((tv) => {
+                    return (
                         <li key={tv.id}>
-                            <div  className={"lower-box-container"} >
+                            <div className={"lower-box-container"}>
                                 <img src={returnImage(tv.id)} className={"tvImg"} alt="bestselling tv"/>
                                 <section className={"tvList"}>
                                     <h3>{returnTvName(tv.id)}</h3>
