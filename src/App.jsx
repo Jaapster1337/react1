@@ -8,7 +8,7 @@ import {priceFormat} from "./helpers/bestseller.js";
 import {screenSizeFormat} from "./helpers/bestseller.js";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
-import {meestVerkocht, goedkoopEerst, geschiktSport} from "./helpers/button-script.js";
+import {meestVerkocht, goedkoopEerst, geschiktSport} from "./helpers/button-script.jsx";
 import  {log} from "./helpers/array-methods.jsx";
 import {showBrands, showTvs} from "./helpers/showAllTvs.jsx";
 

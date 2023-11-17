@@ -44,12 +44,13 @@ function returnAvailableSizes(id) {
 }
 
 function displayOptions(id) {
-    if (inventory[id].options.applicable === false)
+    const space = " "
         return inventory[id].options.map((option, index) => (
-            <>
-                <img src={minus} alt={"check"}/>
-                <span key={index}>{option.name} </span>
-            </>
+            <div key={index}>
+                {option.applicable === false && <img src={minus} alt="minus" />}
+                {option.applicable === true && <img src={check} alt="check" />}
+                <span>{option.name+" "}</span>
+            </div>
         ))
 }
 
