@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    list-style-type: none;
+    margin: 0;
+}
+.upper-box-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.lower-box-container{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.box{
+    text-align: center;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.sold{
+    border: 2px solid #299C8E;
+    background-color: #EDF9F7;
+    color: #299C8E;
+}
+
+.bought{
+    border: 2px solid #447F95;
+    background-color: #F0F4F8;
+    color: #447F95;
+}
+
+.to-sell{
+    border: 2px solid #E24D29;
+    background-color: #FEEFEB;
+    color: #E24D29;
+}
+
+.best-selling{
+    border: grey dotted 2px;
+    width: 90%;
+}
+
+.tvImg{
+    width: 30%;
+}
+
+.tvList{
+    padding-left: 10px;
+}
+
+.tvOptions{
+    display: flex;
+    flex-direction: row;
+}
+
+.tvOptions img{
+    margin: 0 5px;
+    width: 15px;
+}
+
+.container-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.ball{
+    width: 15px;
+    text-align: center;
+}
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+}
